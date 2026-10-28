@@ -1,0 +1,207 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "lab03_indexing.hocvien",
+    "parsedQuery": {
+      "$and": [
+        {
+          "diaChi.quan": {
+            "$eq": "Quan7"
+          }
+        },
+        {
+          "diaChi.thanhPho": {
+            "$eq": "TP.HCM"
+          }
+        },
+        {
+          "hocBong": {
+            "$gte": 1000000
+          }
+        }
+      ]
+    },
+    "indexFilterSet": false,
+    "queryHash": "380AC28A",
+    "planCacheShapeHash": "380AC28A",
+    "planCacheKey": "7CDE126A",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "SORT",
+      "sortPattern": {
+        "hocBong": -1
+      },
+      "memLimit": 104857600,
+      "type": "simple",
+      "inputStage": {
+        "stage": "FETCH",
+        "filter": {
+          "$and": [
+            {
+              "diaChi.quan": {
+                "$eq": "Quan7"
+              }
+            },
+            {
+              "hocBong": {
+                "$gte": 1000000
+              }
+            }
+          ]
+        },
+        "inputStage": {
+          "stage": "IXSCAN",
+          "keyPattern": {
+            "diaChi.thanhPho": 1
+          },
+          "indexName": "C1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "diaChi.thanhPho": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "diaChi.thanhPho": [
+              "[\"TP.HCM\", \"TP.HCM\"]"
+            ]
+          }
+        }
+      }
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 200,
+    "executionTimeMillis": 31,
+    "totalKeysExamined": 20800,
+    "totalDocsExamined": 20800,
+    "executionStages": {
+      "isCached": false,
+      "stage": "SORT",
+      "nReturned": 200,
+      "executionTimeMillisEstimate": 29,
+      "works": 21002,
+      "advanced": 200,
+      "needTime": 20801,
+      "needYield": 0,
+      "saveState": 1,
+      "restoreState": 1,
+      "isEOF": 1,
+      "sortPattern": {
+        "hocBong": -1
+      },
+      "memLimit": 104857600,
+      "type": "simple",
+      "totalDataSizeSorted": 45211,
+      "usedDisk": false,
+      "spills": 0,
+      "spilledDataStorageSize": 0,
+      "inputStage": {
+        "stage": "FETCH",
+        "filter": {
+          "$and": [
+            {
+              "diaChi.quan": {
+                "$eq": "Quan7"
+              }
+            },
+            {
+              "hocBong": {
+                "$gte": 1000000
+              }
+            }
+          ]
+        },
+        "nReturned": 200,
+        "executionTimeMillisEstimate": 29,
+        "works": 20801,
+        "advanced": 200,
+        "needTime": 20600,
+        "needYield": 0,
+        "saveState": 1,
+        "restoreState": 1,
+        "isEOF": 1,
+        "docsExamined": 20800,
+        "alreadyHasObj": 0,
+        "inputStage": {
+          "stage": "IXSCAN",
+          "nReturned": 20800,
+          "executionTimeMillisEstimate": 10,
+          "works": 20801,
+          "advanced": 20800,
+          "needTime": 0,
+          "needYield": 0,
+          "saveState": 1,
+          "restoreState": 1,
+          "isEOF": 1,
+          "keyPattern": {
+            "diaChi.thanhPho": 1
+          },
+          "indexName": "C1",
+          "isMultiKey": false,
+          "multiKeyPaths": {
+            "diaChi.thanhPho": []
+          },
+          "isUnique": false,
+          "isSparse": false,
+          "isPartial": false,
+          "indexVersion": 2,
+          "direction": "forward",
+          "indexBounds": {
+            "diaChi.thanhPho": [
+              "[\"TP.HCM\", \"TP.HCM\"]"
+            ]
+          },
+          "keysExamined": 20800,
+          "seeks": 1,
+          "dupsTested": 0,
+          "dupsDropped": 0
+        }
+      }
+    }
+  },
+  "queryShapeHash": "D85AA620FABBDC4545B60C82F8739CC4F87E6998755F387B37A01F77C84FF5F8",
+  "command": {
+    "find": "hocvien",
+    "filter": {
+      "diaChi.thanhPho": "TP.HCM",
+      "diaChi.quan": "Quan7",
+      "hocBong": {
+        "$gte": 1000000
+      }
+    },
+    "sort": {
+      "hocBong": -1
+    },
+    "$db": "lab03_indexing"
+  },
+  "serverInfo": {
+    "host": "Ritoma",
+    "port": 27017,
+    "version": "8.0.34",
+    "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1
+}
