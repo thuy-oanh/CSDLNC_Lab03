@@ -1,0 +1,85 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "lab03_indexing.hocvien",
+    "parsedQuery": {
+      "diaChi.quan": {
+        "$eq": "Quan7"
+      }
+    },
+    "indexFilterSet": false,
+    "queryHash": "9E916402",
+    "planCacheShapeHash": "9E916402",
+    "planCacheKey": "7058DE53",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "COLLSCAN",
+      "filter": {
+        "diaChi.quan": {
+          "$eq": "Quan7"
+        }
+      },
+      "direction": "forward"
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 3828,
+    "executionTimeMillis": 44,
+    "totalKeysExamined": 0,
+    "totalDocsExamined": 100000,
+    "executionStages": {
+      "isCached": false,
+      "stage": "COLLSCAN",
+      "filter": {
+        "diaChi.quan": {
+          "$eq": "Quan7"
+        }
+      },
+      "nReturned": 3828,
+      "executionTimeMillisEstimate": 41,
+      "works": 100001,
+      "advanced": 3828,
+      "needTime": 96172,
+      "needYield": 0,
+      "saveState": 2,
+      "restoreState": 2,
+      "isEOF": 1,
+      "direction": "forward",
+      "docsExamined": 100000
+    }
+  },
+  "queryShapeHash": "CA129FA60FCC46C0884917C26BD40859EC45AFFB06B21157B64A256B2EB1C44E",
+  "command": {
+    "find": "hocvien",
+    "filter": {
+      "diaChi.quan": "Quan7"
+    },
+    "$db": "lab03_indexing"
+  },
+  "serverInfo": {
+    "host": "Ritoma",
+    "port": 27017,
+    "version": "8.0.34",
+    "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1
+}

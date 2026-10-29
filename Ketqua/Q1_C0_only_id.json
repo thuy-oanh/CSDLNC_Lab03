@@ -1,0 +1,85 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "lab03_indexing.hocvien",
+    "parsedQuery": {
+      "email": {
+        "$eq": "hv000001@example.test"
+      }
+    },
+    "indexFilterSet": false,
+    "queryHash": "ED28E3D2",
+    "planCacheShapeHash": "ED28E3D2",
+    "planCacheKey": "30FCCA9A",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "COLLSCAN",
+      "filter": {
+        "email": {
+          "$eq": "hv000001@example.test"
+        }
+      },
+      "direction": "forward"
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 1,
+    "executionTimeMillis": 63,
+    "totalKeysExamined": 0,
+    "totalDocsExamined": 100000,
+    "executionStages": {
+      "isCached": false,
+      "stage": "COLLSCAN",
+      "filter": {
+        "email": {
+          "$eq": "hv000001@example.test"
+        }
+      },
+      "nReturned": 1,
+      "executionTimeMillisEstimate": 52,
+      "works": 100001,
+      "advanced": 1,
+      "needTime": 99999,
+      "needYield": 0,
+      "saveState": 2,
+      "restoreState": 2,
+      "isEOF": 1,
+      "direction": "forward",
+      "docsExamined": 100000
+    }
+  },
+  "queryShapeHash": "28C98B434FBA9E92ED4B841CF86F13EC667A51600154201C2F288134FB83475D",
+  "command": {
+    "find": "hocvien",
+    "filter": {
+      "email": "hv000001@example.test"
+    },
+    "$db": "lab03_indexing"
+  },
+  "serverInfo": {
+    "host": "Ritoma",
+    "port": 27017,
+    "version": "8.0.34",
+    "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1
+}

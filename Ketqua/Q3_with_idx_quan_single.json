@@ -1,0 +1,129 @@
+{
+  "explainVersion": "1",
+  "queryPlanner": {
+    "namespace": "lab03_indexing.hocvien",
+    "parsedQuery": {
+      "diaChi.quan": {
+        "$eq": "Quan7"
+      }
+    },
+    "indexFilterSet": false,
+    "queryHash": "9E916402",
+    "planCacheShapeHash": "9E916402",
+    "planCacheKey": "840F67B3",
+    "optimizationTimeMillis": 0,
+    "maxIndexedOrSolutionsReached": false,
+    "maxIndexedAndSolutionsReached": false,
+    "maxScansToExplodeReached": false,
+    "prunedSimilarIndexes": false,
+    "winningPlan": {
+      "isCached": false,
+      "stage": "FETCH",
+      "inputStage": {
+        "stage": "IXSCAN",
+        "keyPattern": {
+          "diaChi.quan": 1
+        },
+        "indexName": "idx_quan_single",
+        "isMultiKey": false,
+        "multiKeyPaths": {
+          "diaChi.quan": []
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "diaChi.quan": [
+            "[\"Quan7\", \"Quan7\"]"
+          ]
+        }
+      }
+    },
+    "rejectedPlans": []
+  },
+  "executionStats": {
+    "executionSuccess": true,
+    "nReturned": 3828,
+    "executionTimeMillis": 5,
+    "totalKeysExamined": 3828,
+    "totalDocsExamined": 3828,
+    "executionStages": {
+      "isCached": false,
+      "stage": "FETCH",
+      "nReturned": 3828,
+      "executionTimeMillisEstimate": 5,
+      "works": 3829,
+      "advanced": 3828,
+      "needTime": 0,
+      "needYield": 0,
+      "saveState": 0,
+      "restoreState": 0,
+      "isEOF": 1,
+      "docsExamined": 3828,
+      "alreadyHasObj": 0,
+      "inputStage": {
+        "stage": "IXSCAN",
+        "nReturned": 3828,
+        "executionTimeMillisEstimate": 0,
+        "works": 3829,
+        "advanced": 3828,
+        "needTime": 0,
+        "needYield": 0,
+        "saveState": 0,
+        "restoreState": 0,
+        "isEOF": 1,
+        "keyPattern": {
+          "diaChi.quan": 1
+        },
+        "indexName": "idx_quan_single",
+        "isMultiKey": false,
+        "multiKeyPaths": {
+          "diaChi.quan": []
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "diaChi.quan": [
+            "[\"Quan7\", \"Quan7\"]"
+          ]
+        },
+        "keysExamined": 3828,
+        "seeks": 1,
+        "dupsTested": 0,
+        "dupsDropped": 0
+      }
+    }
+  },
+  "queryShapeHash": "CA129FA60FCC46C0884917C26BD40859EC45AFFB06B21157B64A256B2EB1C44E",
+  "command": {
+    "find": "hocvien",
+    "filter": {
+      "diaChi.quan": "Quan7"
+    },
+    "$db": "lab03_indexing"
+  },
+  "serverInfo": {
+    "host": "Ritoma",
+    "port": 27017,
+    "version": "8.0.34",
+    "gitVersion": "51db4515a6597aedcf6188ee4e48a27e65b065ae"
+  },
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+    "internalQueryFrameworkControl": "trySbeRestricted",
+    "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+  },
+  "ok": 1
+}
