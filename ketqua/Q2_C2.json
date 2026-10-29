@@ -24,7 +24,7 @@
     "indexFilterSet": false,
     "queryHash": "380AC28A",
     "planCacheShapeHash": "380AC28A",
-    "planCacheKey": "8C2E8BD4",
+    "planCacheKey": "9347F622",
     "optimizationTimeMillis": 0,
     "maxIndexedOrSolutionsReached": false,
     "maxIndexedAndSolutionsReached": false,
@@ -32,133 +32,148 @@
     "prunedSimilarIndexes": false,
     "winningPlan": {
       "isCached": false,
-      "stage": "SORT",
-      "sortPattern": {
-        "hocBong": -1
-      },
-      "memLimit": 104857600,
-      "type": "simple",
+      "stage": "FETCH",
       "inputStage": {
-        "stage": "FETCH",
-        "filter": {
-          "hocBong": {
-            "$gte": 1000000
-          }
+        "stage": "IXSCAN",
+        "keyPattern": {
+          "diaChi.thanhPho": 1,
+          "diaChi.quan": 1,
+          "hocBong": -1
         },
-        "inputStage": {
-          "stage": "IXSCAN",
-          "keyPattern": {
-            "diaChi.thanhPho": 1,
-            "diaChi.quan": 1
-          },
-          "indexName": "C2",
-          "isMultiKey": false,
-          "multiKeyPaths": {
-            "diaChi.thanhPho": [],
-            "diaChi.quan": []
-          },
-          "isUnique": false,
-          "isSparse": false,
-          "isPartial": false,
-          "indexVersion": 2,
-          "direction": "forward",
-          "indexBounds": {
-            "diaChi.thanhPho": [
-              "[\"TP.HCM\", \"TP.HCM\"]"
-            ],
-            "diaChi.quan": [
-              "[\"Quan7\", \"Quan7\"]"
-            ]
-          }
+        "indexName": "C3",
+        "isMultiKey": false,
+        "multiKeyPaths": {
+          "diaChi.thanhPho": [],
+          "diaChi.quan": [],
+          "hocBong": []
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "diaChi.thanhPho": [
+            "[\"TP.HCM\", \"TP.HCM\"]"
+          ],
+          "diaChi.quan": [
+            "[\"Quan7\", \"Quan7\"]"
+          ],
+          "hocBong": [
+            "[inf.0, 1000000]"
+          ]
         }
       }
     },
-    "rejectedPlans": []
+    "rejectedPlans": [
+      {
+        "isCached": false,
+        "stage": "SORT",
+        "sortPattern": {
+          "hocBong": -1
+        },
+        "memLimit": 104857600,
+        "type": "simple",
+        "inputStage": {
+          "stage": "FETCH",
+          "filter": {
+            "hocBong": {
+              "$gte": 1000000
+            }
+          },
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "diaChi.thanhPho": 1,
+              "diaChi.quan": 1
+            },
+            "indexName": "C2",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "diaChi.thanhPho": [],
+              "diaChi.quan": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "diaChi.thanhPho": [
+                "[\"TP.HCM\", \"TP.HCM\"]"
+              ],
+              "diaChi.quan": [
+                "[\"Quan7\", \"Quan7\"]"
+              ]
+            }
+          }
+        }
+      }
+    ]
   },
   "executionStats": {
     "executionSuccess": true,
     "nReturned": 200,
-    "executionTimeMillis": 6,
-    "totalKeysExamined": 3828,
-    "totalDocsExamined": 3828,
+    "executionTimeMillis": 0,
+    "totalKeysExamined": 200,
+    "totalDocsExamined": 200,
     "executionStages": {
       "isCached": false,
-      "stage": "SORT",
+      "stage": "FETCH",
       "nReturned": 200,
-      "executionTimeMillisEstimate": 4,
-      "works": 4030,
+      "executionTimeMillisEstimate": 0,
+      "works": 201,
       "advanced": 200,
-      "needTime": 3829,
+      "needTime": 0,
       "needYield": 0,
       "saveState": 0,
       "restoreState": 0,
       "isEOF": 1,
-      "sortPattern": {
-        "hocBong": -1
-      },
-      "memLimit": 104857600,
-      "type": "simple",
-      "totalDataSizeSorted": 45211,
-      "usedDisk": false,
-      "spills": 0,
-      "spilledDataStorageSize": 0,
+      "docsExamined": 200,
+      "alreadyHasObj": 0,
       "inputStage": {
-        "stage": "FETCH",
-        "filter": {
-          "hocBong": {
-            "$gte": 1000000
-          }
-        },
+        "stage": "IXSCAN",
         "nReturned": 200,
-        "executionTimeMillisEstimate": 4,
-        "works": 3829,
+        "executionTimeMillisEstimate": 0,
+        "works": 201,
         "advanced": 200,
-        "needTime": 3628,
+        "needTime": 0,
         "needYield": 0,
         "saveState": 0,
         "restoreState": 0,
         "isEOF": 1,
-        "docsExamined": 3828,
-        "alreadyHasObj": 0,
-        "inputStage": {
-          "stage": "IXSCAN",
-          "nReturned": 3828,
-          "executionTimeMillisEstimate": 4,
-          "works": 3829,
-          "advanced": 3828,
-          "needTime": 0,
-          "needYield": 0,
-          "saveState": 0,
-          "restoreState": 0,
-          "isEOF": 1,
-          "keyPattern": {
-            "diaChi.thanhPho": 1,
-            "diaChi.quan": 1
-          },
-          "indexName": "C2",
-          "isMultiKey": false,
-          "multiKeyPaths": {
-            "diaChi.thanhPho": [],
-            "diaChi.quan": []
-          },
-          "isUnique": false,
-          "isSparse": false,
-          "isPartial": false,
-          "indexVersion": 2,
-          "direction": "forward",
-          "indexBounds": {
-            "diaChi.thanhPho": [
-              "[\"TP.HCM\", \"TP.HCM\"]"
-            ],
-            "diaChi.quan": [
-              "[\"Quan7\", \"Quan7\"]"
-            ]
-          },
-          "keysExamined": 3828,
-          "seeks": 1,
-          "dupsTested": 0,
-          "dupsDropped": 0
-        }
+        "keyPattern": {
+          "diaChi.thanhPho": 1,
+          "diaChi.quan": 1,
+          "hocBong": -1
+        },
+        "indexName": "C3",
+        "isMultiKey": false,
+        "multiKeyPaths": {
+          "diaChi.thanhPho": [],
+          "diaChi.quan": [],
+          "hocBong": []
+        },
+        "isUnique": false,
+        "isSparse": false,
+        "isPartial": false,
+        "indexVersion": 2,
+        "direction": "forward",
+        "indexBounds": {
+          "diaChi.thanhPho": [
+            "[\"TP.HCM\", \"TP.HCM\"]"
+          ],
+          "diaChi.quan": [
+            "[\"Quan7\", \"Quan7\"]"
+          ],
+          "hocBong": [
+            "[inf.0, 1000000]"
+          ]
+        },
+        "keysExamined": 200,
+        "seeks": 1,
+        "dupsTested": 0,
+        "dupsDropped": 0
       }
     }
   },

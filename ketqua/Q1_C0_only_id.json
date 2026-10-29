@@ -31,7 +31,7 @@
   "executionStats": {
     "executionSuccess": true,
     "nReturned": 1,
-    "executionTimeMillis": 63,
+    "executionTimeMillis": 49,
     "totalKeysExamined": 0,
     "totalDocsExamined": 100000,
     "executionStages": {
@@ -43,13 +43,13 @@
         }
       },
       "nReturned": 1,
-      "executionTimeMillisEstimate": 52,
+      "executionTimeMillisEstimate": 47,
       "works": 100001,
       "advanced": 1,
       "needTime": 99999,
       "needYield": 0,
-      "saveState": 2,
-      "restoreState": 2,
+      "saveState": 3,
+      "restoreState": 3,
       "isEOF": 1,
       "direction": "forward",
       "docsExamined": 100000

@@ -53,7 +53,7 @@
       "isCached": false,
       "stage": "FETCH",
       "nReturned": 3828,
-      "executionTimeMillisEstimate": 5,
+      "executionTimeMillisEstimate": 0,
       "works": 3829,
       "advanced": 3828,
       "needTime": 0,
