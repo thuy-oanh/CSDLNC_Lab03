@@ -125,5 +125,32 @@
     "internalQueryFrameworkControl": "trySbeRestricted",
     "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
   },
-  "ok": 1
+  "ok": 1,
+  "measurement": {
+    "testName": "Q1_idx_email",
+    "measuredTimesMs": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "sortedTimesMs": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "medianTimeMs": 0,
+    "nReturned": 1,
+    "totalKeysExamined": 1,
+    "totalDocsExamined": 1,
+    "executionTimeMillis": 0,
+    "stages": [
+      "FETCH",
+      "IXSCAN",
+      "indexName=idx_email"
+    ]
+  }
 }

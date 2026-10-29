@@ -31,7 +31,7 @@
   "executionStats": {
     "executionSuccess": true,
     "nReturned": 1,
-    "executionTimeMillis": 49,
+    "executionTimeMillis": 45,
     "totalKeysExamined": 0,
     "totalDocsExamined": 100000,
     "executionStages": {
@@ -43,13 +43,13 @@
         }
       },
       "nReturned": 1,
-      "executionTimeMillisEstimate": 47,
+      "executionTimeMillisEstimate": 42,
       "works": 100001,
       "advanced": 1,
       "needTime": 99999,
       "needYield": 0,
-      "saveState": 3,
-      "restoreState": 3,
+      "saveState": 2,
+      "restoreState": 2,
       "isEOF": 1,
       "direction": "forward",
       "docsExamined": 100000
@@ -81,5 +81,30 @@
     "internalQueryFrameworkControl": "trySbeRestricted",
     "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
   },
-  "ok": 1
+  "ok": 1,
+  "measurement": {
+    "testName": "Q1_C0_only_id",
+    "measuredTimesMs": [
+      45,
+      45,
+      42,
+      48,
+      55
+    ],
+    "sortedTimesMs": [
+      42,
+      45,
+      45,
+      48,
+      55
+    ],
+    "medianTimeMs": 45,
+    "nReturned": 1,
+    "totalKeysExamined": 0,
+    "totalDocsExamined": 100000,
+    "executionTimeMillis": 45,
+    "stages": [
+      "COLLSCAN"
+    ]
+  }
 }

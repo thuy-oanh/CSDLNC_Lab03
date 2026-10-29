@@ -202,5 +202,33 @@
     "internalQueryFrameworkControl": "trySbeRestricted",
     "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
   },
-  "ok": 1
+  "ok": 1,
+  "measurement": {
+    "testName": "Q4_hoTen_Uncovered",
+    "measuredTimesMs": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "sortedTimesMs": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "medianTimeMs": 0,
+    "nReturned": 200,
+    "totalKeysExamined": 200,
+    "totalDocsExamined": 200,
+    "executionTimeMillis": 0,
+    "stages": [
+      "PROJECTION_DEFAULT",
+      "FETCH",
+      "IXSCAN",
+      "indexName=C3"
+    ]
+  }
 }

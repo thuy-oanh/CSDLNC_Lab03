@@ -10,7 +10,7 @@
     "indexFilterSet": false,
     "queryHash": "9E916402",
     "planCacheShapeHash": "9E916402",
-    "planCacheKey": "840F67B3",
+    "planCacheKey": "7058DE53",
     "optimizationTimeMillis": 0,
     "maxIndexedOrSolutionsReached": false,
     "maxIndexedAndSolutionsReached": false,
@@ -46,14 +46,14 @@
   "executionStats": {
     "executionSuccess": true,
     "nReturned": 3828,
-    "executionTimeMillis": 5,
+    "executionTimeMillis": 4,
     "totalKeysExamined": 3828,
     "totalDocsExamined": 3828,
     "executionStages": {
       "isCached": false,
       "stage": "FETCH",
       "nReturned": 3828,
-      "executionTimeMillisEstimate": 0,
+      "executionTimeMillisEstimate": 2,
       "works": 3829,
       "advanced": 3828,
       "needTime": 0,
@@ -66,7 +66,7 @@
       "inputStage": {
         "stage": "IXSCAN",
         "nReturned": 3828,
-        "executionTimeMillisEstimate": 0,
+        "executionTimeMillisEstimate": 2,
         "works": 3829,
         "advanced": 3828,
         "needTime": 0,
@@ -125,5 +125,32 @@
     "internalQueryFrameworkControl": "trySbeRestricted",
     "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
   },
-  "ok": 1
+  "ok": 1,
+  "measurement": {
+    "testName": "Q3_with_idx_quan_single",
+    "measuredTimesMs": [
+      4,
+      6,
+      4,
+      4,
+      4
+    ],
+    "sortedTimesMs": [
+      4,
+      4,
+      4,
+      4,
+      6
+    ],
+    "medianTimeMs": 4,
+    "nReturned": 3828,
+    "totalKeysExamined": 3828,
+    "totalDocsExamined": 3828,
+    "executionTimeMillis": 4,
+    "stages": [
+      "FETCH",
+      "IXSCAN",
+      "indexName=idx_quan_single"
+    ]
+  }
 }

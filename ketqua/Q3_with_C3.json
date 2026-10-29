@@ -31,7 +31,7 @@
   "executionStats": {
     "executionSuccess": true,
     "nReturned": 3828,
-    "executionTimeMillis": 42,
+    "executionTimeMillis": 50,
     "totalKeysExamined": 0,
     "totalDocsExamined": 100000,
     "executionStages": {
@@ -43,7 +43,7 @@
         }
       },
       "nReturned": 3828,
-      "executionTimeMillisEstimate": 41,
+      "executionTimeMillisEstimate": 49,
       "works": 100001,
       "advanced": 3828,
       "needTime": 96172,
@@ -81,5 +81,30 @@
     "internalQueryFrameworkControl": "trySbeRestricted",
     "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
   },
-  "ok": 1
+  "ok": 1,
+  "measurement": {
+    "testName": "Q3_with_C3",
+    "measuredTimesMs": [
+      50,
+      49,
+      44,
+      44,
+      43
+    ],
+    "sortedTimesMs": [
+      43,
+      44,
+      44,
+      49,
+      50
+    ],
+    "medianTimeMs": 44,
+    "nReturned": 3828,
+    "totalKeysExamined": 0,
+    "totalDocsExamined": 100000,
+    "executionTimeMillis": 50,
+    "stages": [
+      "COLLSCAN"
+    ]
+  }
 }
