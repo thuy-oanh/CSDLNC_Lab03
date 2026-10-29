@@ -1,0 +1,203 @@
+﻿{
+  "buoc": "Buoc 7 - unique + sparse",
+  "mongodVersion": "8.0.34",
+  "thaoTac": [
+    {
+      "thaoTac": "0. Reset + nap ban sao 6 document (2 thieu, 2 null, 2 chuoi)",
+      "chiTiet": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 4,
+        "4": 5,
+        "5": 6
+      },
+      "ketQua": "THANH CONG",
+      "soDocSauThaoTac": 6,
+      "dsDoc": [
+        "1:<thieu>",
+        "2:<thieu>",
+        "3:null",
+        "4:null",
+        "5:\"0901000001\"",
+        "6:\"0901000002\""
+      ],
+      "cacChiMuc": [
+        "_id_"
+      ]
+    },
+    {
+      "thaoTac": "1. createIndex unique+sparse khi co 2 null (xung dot)",
+      "ketQua": "LOI",
+      "maLoi": 11000,
+      "tenLoi": "DuplicateKey",
+      "thongBao": "Index build failed: 1db94952-e799-4e6f-97aa-5fb3f4602152: Collection lab03_indexing.test_sparse_unique ( afcef461-50f5-4425-af88-53f038047377 ) :: caused by :: E11000 duplicate key error collection: lab03_indexing.test_sparse_unique index: uq_sdt_sparse dup key: { soDienThoai: null }",
+      "soDocSauThaoTac": 6,
+      "dsDoc": [
+        "1:<thieu>",
+        "2:<thieu>",
+        "3:null",
+        "4:null",
+        "5:\"0901000001\"",
+        "6:\"0901000002\""
+      ],
+      "cacChiMuc": [
+        "_id_"
+      ]
+    },
+    {
+      "thaoTac": "2. Xu ly xung dot: $unset soDienThoai o cac doc co gia tri null",
+      "chiTiet": {
+        "acknowledged": true,
+        "insertedId": null,
+        "matchedCount": 2,
+        "modifiedCount": 2,
+        "upsertedCount": 0
+      },
+      "ketQua": "THANH CONG",
+      "soDocSauThaoTac": 6,
+      "dsDoc": [
+        "1:<thieu>",
+        "2:<thieu>",
+        "3:<thieu>",
+        "4:<thieu>",
+        "5:\"0901000001\"",
+        "6:\"0901000002\""
+      ],
+      "cacChiMuc": [
+        "_id_"
+      ]
+    },
+    {
+      "thaoTac": "3. Tao lai unique+sparse index",
+      "chiTiet": "uq_sdt_sparse",
+      "ketQua": "THANH CONG",
+      "soDocSauThaoTac": 6,
+      "dsDoc": [
+        "1:<thieu>",
+        "2:<thieu>",
+        "3:<thieu>",
+        "4:<thieu>",
+        "5:\"0901000001\"",
+        "6:\"0901000002\""
+      ],
+      "cacChiMuc": [
+        "_id_",
+        "uq_sdt_sparse"
+      ]
+    },
+    {
+      "thaoTac": "4a. Them document THIEU truong (_id 7)",
+      "chiTiet": {
+        "acknowledged": true,
+        "insertedId": 7
+      },
+      "ketQua": "THANH CONG",
+      "soDocSauThaoTac": 7,
+      "dsDoc": [
+        "1:<thieu>",
+        "2:<thieu>",
+        "3:<thieu>",
+        "4:<thieu>",
+        "5:\"0901000001\"",
+        "6:\"0901000002\"",
+        "7:<thieu>"
+      ],
+      "cacChiMuc": [
+        "_id_",
+        "uq_sdt_sparse"
+      ]
+    },
+    {
+      "thaoTac": "4a'. Them them 1 document THIEU truong nua (_id 8)",
+      "chiTiet": {
+        "acknowledged": true,
+        "insertedId": 8
+      },
+      "ketQua": "THANH CONG",
+      "soDocSauThaoTac": 8,
+      "dsDoc": [
+        "1:<thieu>",
+        "2:<thieu>",
+        "3:<thieu>",
+        "4:<thieu>",
+        "5:\"0901000001\"",
+        "6:\"0901000002\"",
+        "7:<thieu>",
+        "8:<thieu>"
+      ],
+      "cacChiMuc": [
+        "_id_",
+        "uq_sdt_sparse"
+      ]
+    },
+    {
+      "thaoTac": "4b. Them document co soDienThoai: null (_id 9) - lan 1",
+      "chiTiet": {
+        "acknowledged": true,
+        "insertedId": 9
+      },
+      "ketQua": "THANH CONG",
+      "soDocSauThaoTac": 9,
+      "dsDoc": [
+        "1:<thieu>",
+        "2:<thieu>",
+        "3:<thieu>",
+        "4:<thieu>",
+        "5:\"0901000001\"",
+        "6:\"0901000002\"",
+        "7:<thieu>",
+        "8:<thieu>",
+        "9:null"
+      ],
+      "cacChiMuc": [
+        "_id_",
+        "uq_sdt_sparse"
+      ]
+    },
+    {
+      "thaoTac": "4b'. Them document co soDienThoai: null (_id 10) - lan 2",
+      "ketQua": "LOI",
+      "maLoi": 11000,
+      "thongBao": "E11000 duplicate key error collection: lab03_indexing.test_sparse_unique index: uq_sdt_sparse dup key: { soDienThoai: null }",
+      "soDocSauThaoTac": 9,
+      "dsDoc": [
+        "1:<thieu>",
+        "2:<thieu>",
+        "3:<thieu>",
+        "4:<thieu>",
+        "5:\"0901000001\"",
+        "6:\"0901000002\"",
+        "7:<thieu>",
+        "8:<thieu>",
+        "9:null"
+      ],
+      "cacChiMuc": [
+        "_id_",
+        "uq_sdt_sparse"
+      ]
+    },
+    {
+      "thaoTac": "4c. Them document LAP so dien thoai da co (0901000001) (_id 11)",
+      "ketQua": "LOI",
+      "maLoi": 11000,
+      "thongBao": "E11000 duplicate key error collection: lab03_indexing.test_sparse_unique index: uq_sdt_sparse dup key: { soDienThoai: \"0901000001\" }",
+      "soDocSauThaoTac": 9,
+      "dsDoc": [
+        "1:<thieu>",
+        "2:<thieu>",
+        "3:<thieu>",
+        "4:<thieu>",
+        "5:\"0901000001\"",
+        "6:\"0901000002\"",
+        "7:<thieu>",
+        "8:<thieu>",
+        "9:null"
+      ],
+      "cacChiMuc": [
+        "_id_",
+        "uq_sdt_sparse"
+      ]
+    }
+  ]
+}

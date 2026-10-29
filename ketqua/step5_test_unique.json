@@ -1,0 +1,222 @@
+﻿{
+  "buoc": "Buoc 5 - unique",
+  "mongodVersion": "8.0.34",
+  "thaoTac": [
+    {
+      "thaoTac": "0. Reset + nap 4 ho so (_id 1 va 3 cung email a@)",
+      "ketQua": "THANH CONG",
+      "chiTiet": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 4
+      },
+      "soDocSauThaoTac": 4,
+      "dsDoc": [
+        "1:\"a@example.test\"",
+        "2:\"b@example.test\"",
+        "3:\"a@example.test\"",
+        "4:\"c@example.test\""
+      ],
+      "cacChiMuc": [
+        "_id_"
+      ]
+    },
+    {
+      "thaoTac": "1. createIndex({email:1},{unique:true}) khi dang co email trung",
+      "ketQua": "LOI",
+      "maLoi": 11000,
+      "tenLoi": "DuplicateKey",
+      "thongBao": "Index build failed: 5cb0d32b-3ac1-4cb6-8928-655bdf07c0b0: Collection lab03_indexing.test_unique ( 671d1fab-0673-4bfb-bb77-ff17a873b569 ) :: caused by :: E11000 duplicate key error collection: lab03_indexing.test_unique index: uq_email dup key: { email: \"a@example.test\" }",
+      "soDocSauThaoTac": 4,
+      "dsDoc": [
+        "1:\"a@example.test\"",
+        "2:\"b@example.test\"",
+        "3:\"a@example.test\"",
+        "4:\"c@example.test\""
+      ],
+      "cacChiMuc": [
+        "_id_"
+      ]
+    },
+    {
+      "thaoTac": "2. Tim email trung (aggregate group)",
+      "ketQua": "THANH CONG",
+      "chiTiet": [
+        {
+          "_id": "a@example.test",
+          "soLan": 2,
+          "ids": [
+            1,
+            3
+          ]
+        }
+      ],
+      "soDocSauThaoTac": 4,
+      "dsDoc": [
+        "1:\"a@example.test\"",
+        "2:\"b@example.test\"",
+        "3:\"a@example.test\"",
+        "4:\"c@example.test\""
+      ],
+      "cacChiMuc": [
+        "_id_"
+      ]
+    },
+    {
+      "thaoTac": "3. Sua email cua _id 3 -> d@example.test",
+      "ketQua": "THANH CONG",
+      "chiTiet": {
+        "acknowledged": true,
+        "insertedId": null,
+        "matchedCount": 1,
+        "modifiedCount": 1,
+        "upsertedCount": 0
+      },
+      "soDocSauThaoTac": 4,
+      "dsDoc": [
+        "1:\"a@example.test\"",
+        "2:\"b@example.test\"",
+        "3:\"d@example.test\"",
+        "4:\"c@example.test\""
+      ],
+      "cacChiMuc": [
+        "_id_"
+      ]
+    },
+    {
+      "thaoTac": "4. Tao lai unique index uq_email",
+      "ketQua": "THANH CONG",
+      "chiTiet": "uq_email",
+      "soDocSauThaoTac": 4,
+      "dsDoc": [
+        "1:\"a@example.test\"",
+        "2:\"b@example.test\"",
+        "3:\"d@example.test\"",
+        "4:\"c@example.test\""
+      ],
+      "cacChiMuc": [
+        "_id_",
+        "uq_email"
+      ]
+    },
+    {
+      "thaoTac": "5. insertOne email da ton tai (b@example.test)",
+      "ketQua": "LOI",
+      "maLoi": 11000,
+      "thongBao": "E11000 duplicate key error collection: lab03_indexing.test_unique index: uq_email dup key: { email: \"b@example.test\" }",
+      "soDocSauThaoTac": 4,
+      "dsDoc": [
+        "1:\"a@example.test\"",
+        "2:\"b@example.test\"",
+        "3:\"d@example.test\"",
+        "4:\"c@example.test\""
+      ],
+      "cacChiMuc": [
+        "_id_",
+        "uq_email"
+      ]
+    },
+    {
+      "thaoTac": "6. insertOne email moi (f@example.test)",
+      "ketQua": "THANH CONG",
+      "chiTiet": {
+        "acknowledged": true,
+        "insertedId": 6
+      },
+      "soDocSauThaoTac": 5,
+      "dsDoc": [
+        "1:\"a@example.test\"",
+        "2:\"b@example.test\"",
+        "3:\"d@example.test\"",
+        "4:\"c@example.test\"",
+        "6:\"f@example.test\""
+      ],
+      "cacChiMuc": [
+        "_id_",
+        "uq_email"
+      ]
+    },
+    {
+      "thaoTac": "7. updateOne _id 4 -> email cua ho so khac (b@example.test)",
+      "ketQua": "LOI",
+      "maLoi": 11000,
+      "thongBao": "E11000 duplicate key error collection: lab03_indexing.test_unique index: uq_email dup key: { email: \"b@example.test\" }",
+      "soDocSauThaoTac": 5,
+      "dsDoc": [
+        "1:\"a@example.test\"",
+        "2:\"b@example.test\"",
+        "3:\"d@example.test\"",
+        "4:\"c@example.test\"",
+        "6:\"f@example.test\""
+      ],
+      "cacChiMuc": [
+        "_id_",
+        "uq_email"
+      ]
+    },
+    {
+      "thaoTac": "8. updateOne _id 4 -> g@example.test",
+      "ketQua": "THANH CONG",
+      "chiTiet": {
+        "acknowledged": true,
+        "insertedId": null,
+        "matchedCount": 1,
+        "modifiedCount": 1,
+        "upsertedCount": 0
+      },
+      "soDocSauThaoTac": 5,
+      "dsDoc": [
+        "1:\"a@example.test\"",
+        "2:\"b@example.test\"",
+        "3:\"d@example.test\"",
+        "4:\"g@example.test\"",
+        "6:\"f@example.test\""
+      ],
+      "cacChiMuc": [
+        "_id_",
+        "uq_email"
+      ]
+    },
+    {
+      "thaoTac": "9a. (mo rong) insertOne thieu email lan 1",
+      "ketQua": "THANH CONG",
+      "chiTiet": {
+        "acknowledged": true,
+        "insertedId": 7
+      },
+      "soDocSauThaoTac": 6,
+      "dsDoc": [
+        "1:\"a@example.test\"",
+        "2:\"b@example.test\"",
+        "3:\"d@example.test\"",
+        "4:\"g@example.test\"",
+        "6:\"f@example.test\"",
+        "7:<thieu>"
+      ],
+      "cacChiMuc": [
+        "_id_",
+        "uq_email"
+      ]
+    },
+    {
+      "thaoTac": "9b. (mo rong) insertOne thieu email lan 2",
+      "ketQua": "LOI",
+      "maLoi": 11000,
+      "thongBao": "E11000 duplicate key error collection: lab03_indexing.test_unique index: uq_email dup key: { email: null }",
+      "soDocSauThaoTac": 6,
+      "dsDoc": [
+        "1:\"a@example.test\"",
+        "2:\"b@example.test\"",
+        "3:\"d@example.test\"",
+        "4:\"g@example.test\"",
+        "6:\"f@example.test\"",
+        "7:<thieu>"
+      ],
+      "cacChiMuc": [
+        "_id_",
+        "uq_email"
+      ]
+    }
+  ]
+}

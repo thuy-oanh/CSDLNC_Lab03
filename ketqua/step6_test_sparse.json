@@ -1,0 +1,183 @@
+﻿{
+  "buoc": "Buoc 6 - sparse",
+  "mongodVersion": "8.0.34",
+  "tongDocBanDau": 6,
+  "truocKhiTaoIndex": [
+    {
+      "ten": "$exists:true",
+      "boLoc": "{\"soDienThoai\":{\"$exists\":true}}",
+      "hint": null,
+      "soDoc": 4,
+      "dsId": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "keHoach": "COLLSCAN",
+      "nReturned": 4,
+      "totalKeysExamined": 0,
+      "totalDocsExamined": 6
+    },
+    {
+      "ten": "$exists:false",
+      "boLoc": "{\"soDienThoai\":{\"$exists\":false}}",
+      "hint": null,
+      "soDoc": 2,
+      "dsId": [
+        1,
+        2
+      ],
+      "keHoach": "COLLSCAN",
+      "nReturned": 2,
+      "totalKeysExamined": 0,
+      "totalDocsExamined": 6
+    },
+    {
+      "ten": "null",
+      "boLoc": "{\"soDienThoai\":null}",
+      "hint": null,
+      "soDoc": 4,
+      "dsId": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "keHoach": "COLLSCAN",
+      "nReturned": 4,
+      "totalKeysExamined": 0,
+      "totalDocsExamined": 6
+    }
+  ],
+  "taoIndex": "idx_sdt_sparse",
+  "cacChiMuc": [
+    {
+      "name": "_id_",
+      "key": {
+        "_id": 1
+      },
+      "sparse": false
+    },
+    {
+      "name": "idx_sdt_sparse",
+      "key": {
+        "soDienThoai": 1
+      },
+      "sparse": true
+    }
+  ],
+  "sauKhiTaoIndex_plannerTuChon": [
+    {
+      "ten": "$exists:true",
+      "boLoc": "{\"soDienThoai\":{\"$exists\":true}}",
+      "hint": null,
+      "soDoc": 4,
+      "dsId": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "keHoach": "FETCH <- IXSCAN(idx_sdt_sparse)",
+      "nReturned": 4,
+      "totalKeysExamined": 4,
+      "totalDocsExamined": 4
+    },
+    {
+      "ten": "$exists:false",
+      "boLoc": "{\"soDienThoai\":{\"$exists\":false}}",
+      "hint": null,
+      "soDoc": 2,
+      "dsId": [
+        1,
+        2
+      ],
+      "keHoach": "COLLSCAN",
+      "nReturned": 2,
+      "totalKeysExamined": 0,
+      "totalDocsExamined": 6
+    },
+    {
+      "ten": "null",
+      "boLoc": "{\"soDienThoai\":null}",
+      "hint": null,
+      "soDoc": 4,
+      "dsId": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "keHoach": "COLLSCAN",
+      "nReturned": 4,
+      "totalKeysExamined": 0,
+      "totalDocsExamined": 6
+    }
+  ],
+  "findRong": {
+    "thuong_soDoc": 6,
+    "thuong_dsId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "hint_soDoc": 4,
+    "hint_dsId": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "docBiThieuKhiHint": [
+      1,
+      2
+    ]
+  },
+  "epHint_moRong": [
+    {
+      "ten": "$exists:true + hint",
+      "boLoc": "{\"soDienThoai\":{\"$exists\":true}}",
+      "hint": "idx_sdt_sparse",
+      "soDoc": 4,
+      "dsId": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "keHoach": "FETCH <- IXSCAN(idx_sdt_sparse)",
+      "nReturned": 4,
+      "totalKeysExamined": 4,
+      "totalDocsExamined": 4
+    },
+    {
+      "ten": "$exists:false + hint",
+      "boLoc": "{\"soDienThoai\":{\"$exists\":false}}",
+      "hint": "idx_sdt_sparse",
+      "soDoc": 0,
+      "dsId": [],
+      "keHoach": "FETCH <- IXSCAN(idx_sdt_sparse)",
+      "nReturned": 0,
+      "totalKeysExamined": 4,
+      "totalDocsExamined": 4
+    },
+    {
+      "ten": "null + hint",
+      "boLoc": "{\"soDienThoai\":null}",
+      "hint": "idx_sdt_sparse",
+      "soDoc": 2,
+      "dsId": [
+        3,
+        4
+      ],
+      "keHoach": "FETCH <- IXSCAN(idx_sdt_sparse)",
+      "nReturned": 2,
+      "totalKeysExamined": 4,
+      "totalDocsExamined": 4
+    }
+  ]
+}
